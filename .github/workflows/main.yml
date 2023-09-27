@@ -1,8 +1,17 @@
-on:
-  push:
-    branches:
-    - main
+name: Pylint
+on: [push]
+
 jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.8
+    - uses: pre-commit/action@v3.0.8
+    - uses: pre-commit-ci/lite-action@v1.0.1
+      if: always()
   build:
     runs-on: ubuntu-latest
     steps:
