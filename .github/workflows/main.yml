@@ -1,6 +1,7 @@
 on:
   push:
-    branches: [dev]
+    branches:
+    - main
 jobs:
   build:
     runs-on: ubuntu-latest
