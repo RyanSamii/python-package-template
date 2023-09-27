@@ -1,9 +1,6 @@
 on:
   push:
-    branches: master
-    paths:
-    - 'hello_world.py'
-    - 'lint.py'
+    branches: [dev]
 jobs:
   build:
     runs-on: ubuntu-latest
